@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %} </title>
+        <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://use.typekit.net/cgv1ais.css">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}">
+        
+    </head>
+    <body>
+        <div class="content">
+            <nav class="navbar">
+                <a href="/">home</a>
+                <a href="about">about</a>
+                <a href="blog">blog</a>
+                <a href="projects">projects</a>
+            </nav>
+
+            {% block content%}
+            {% endblock %}
+
+        </div>
+        <p id="copyright">© 2021 Angela Moon</p>
+        <footer class="footer">
+            <p>i love you, thanks for being here <3</p>
+            <div class="social-links">
+                <a href="https://instagram.com/angelamoooon" target="_blank">
+                    <img src="{{url_for('static', filename='instagram.jpg')}}"> <!--FIND TRANSPARENT FILES!!-->
+                </a>
+                <a href="https://github.com/angela-moon" target="_blank">
+                    <img src="{{url_for('static', filename='github.jpg')}}">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
