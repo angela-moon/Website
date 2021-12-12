@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<form method="POST">
+  <div class="authorization-form">
+    <h1>behind the scenes :O</h1>
+    <span id="login-description"
+      ><p>Identify yourself as The Angela Moon!</p></span
+    >
+    <label for="password"></label>
+    <p>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        placeholder="password"
+      />
+      <div class="submit-button"><button type="submit">login</button></div>
+    </p>
+  </div>
+</form>
+{% endblock %}
