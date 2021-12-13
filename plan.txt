@@ -1,0 +1,9 @@
+TO DO!!
+
+* figure out TinyMCE (or a different WYSIWYG editor)
+* add color to the links to the blog posts
+* add project grid (and projects underneath) to the projects page
+* make transparent icons for the footer
+* make interests drawing?
+* add actual descriptions in the about section
+* also add a contact section somewhere
