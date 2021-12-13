@@ -1,10 +1,25 @@
-{% extends "base.html" %}
-
-{% block title %}Blog{% endblock %}
-
-{% block content %}
-    <div id="page-heading">
-        <h2>thoughts, rants, the like</h2>
-        <p>funny tagline</p>
-    </div>
+{% extends "base.html" %} {% block title %}Blog{% endblock %} {% block content
+%}
+<div id="page-heading">
+  <h2>thoughts, rants, the like</h2>
+  <p>funny tagline</p>
+</div>
+<div id="posts">
+  <hr />
+  {% for post in posts %} {% if user.is_authenticated %}
+  <div class="submit-button delete-button">
+    <button type="button"><a href="/delete-post/{{post.id}}">delete</a></button>
+  </div>
+  <div class="submit-button edit-button">
+    <button type="button">edit</button>
+  </div>
+  {% endif %}
+  <div class="post-card">
+    <h4 class="card-title"><a href="post/{{post.id}}">{{post.title}}</a></h4>
+    <div class="post-date"><p>{{post.date_created}}</p></div>
+    <p class="card-body">{{post.text}}</p>
+  </div>
+  <hr />
+  {% endfor %}
+</div>
 {% endblock %}

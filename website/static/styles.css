@@ -64,10 +64,13 @@ a {
   border-style: solid;
 }
 
+.submit-button {
+  font-size: 1.25em;
+}
+
 .submit-button button {
   font-family: acumin-pro, sans-serif;
   color: rgb(24, 24, 24);
-  font-size: 1em;
   letter-spacing: 0.03em;
   padding: 0.25em 0.5em 0.35em 0.5em;
   border-radius: 7px;
@@ -87,11 +90,11 @@ a {
 }
 
 .content {
-  margin: 10rem 11rem 0rem 11rem; /* top: 15; right bottom: 34; left */
+  margin: 10rem 11rem 2rem 11rem; /* top: 15; right bottom: 34; left */
   border: 10px solid rgb(24, 24, 24);
   border-radius: 75px;
   background-color: white;
-  padding: 2.75em 3em;
+  padding: 2.75em 3em 5em 3em;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -114,18 +117,18 @@ a {
   }
 }
 
-.navbar {
+.nav-bar {
   text-align: right;
   font-size: 2em;
 }
 
-.navbar a {
+.nav-bar a {
   padding: 0em 0.687em;
   text-decoration: none;
   color: rgb(24, 24, 24);
 }
 
-.navbar a:hover {
+.nav-bar a:hover {
   color: #335dc1;
   transition-duration: 0.2s;
 }
@@ -191,6 +194,10 @@ footer p {
 }
 
 /* other pages */
+
+#page-heading {
+  margin: 0rem 0rem 1.5rem 0rem;
+}
 
 #page-heading h2,
 #page-heading p {
@@ -258,7 +265,7 @@ p {
   padding: 0.5em;
 }
 
-/* CREATING BLOG POSTS */
+/* creating blog posts */
 
 .input-text textarea {
   width: 100%;
@@ -266,4 +273,62 @@ p {
   padding: 1em;
   box-sizing: border-box;
   border-radius: 7px;
+  border-width: 2px;
+  font-family: acumin-pro, sans-serif;
+  resize: vertical;
+}
+
+.input-text input[type="text"] {
+  width: 50%;
+  padding: 0.75em;
+  margin: 0.5rem 0rem;
+  border-radius: 7px;
+  border-style: solid;
+  font-family: acumin-pro, sans-serif;
+}
+
+/* displaying blog posts */
+
+.post-card {
+  padding: 0.3em 0.5em;
+}
+
+.delete-button,
+.edit-button {
+  float: right;
+  font-size: 0.7em;
+  margin: 1.3em 0.4em;
+}
+
+.delete-button a,
+.edit-button a {
+  color: rgb(24, 24, 24);
+}
+
+.delete-button button {
+  background-color: #e97f7f;
+  border-color: #d66060;
+}
+
+.card-title {
+  margin: 0rem;
+  display: inline-block;
+}
+
+.card-title a {
+  color: rgb(24, 24, 24);
+}
+
+.post-date {
+  font-style: italic;
+  font-size: 0.8em;
+  color: rgb(77, 77, 77);
+}
+
+.card-body {
+  margin: 0rem 0rem 0.5rem 0rem;
+}
+
+#post-body {
+  margin: 1rem 1rem 3rem 1rem;
 }
