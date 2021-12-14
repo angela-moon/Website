@@ -1,6 +1,5 @@
 body {
   background-image: url("background.png");
-  background-size: cover;
   font-family: acumin-pro, sans-serif;
 }
 
@@ -34,8 +33,16 @@ p {
 }
 
 a {
-  color: #335dc1;
+  color: #7e94c9;
   text-decoration: none;
+}
+
+#static {
+  background-size: cover;
+}
+
+#dynamic {
+  background-size: contain;
 }
 
 #login-link {
@@ -90,7 +97,7 @@ a {
 }
 
 .content {
-  margin: 10rem 11rem 2rem 11rem; /* top: 15; right bottom: 34; left */
+  margin: 10rem 14rem 2rem 14rem; /* top: 15; right bottom: 34; left */
   border: 10px solid rgb(24, 24, 24);
   border-radius: 75px;
   background-color: white;
@@ -129,13 +136,18 @@ a {
 }
 
 .nav-bar a:hover {
-  color: #335dc1;
+  color: #7e94c9;
   transition-duration: 0.2s;
 }
 
 #copyright {
   text-align: center;
-  margin: 1rem 0rem 15rem 0rem;
+  margin: 1rem 0rem 0rem 0rem;
+}
+
+.footer {
+  padding: 20em 0em 2em 0em;
+  background-image: url("footer.png");
 }
 
 footer p {
@@ -148,8 +160,9 @@ footer p {
 }
 
 .social-links img {
-  width: 5em;
+  width: 3em;
   height: auto;
+  margin: 0em 0em 1em 0em;
 }
 
 .social-links a {

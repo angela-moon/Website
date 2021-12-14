@@ -9,20 +9,20 @@ views = Blueprint("views", __name__)
 
 @views.route("/")
 def home():
-    return render_template("index.html", user=current_user)
+    return render_template("index.html", user=current_user, type="static")
 
 @views.route("/about")
 def about():
-    return render_template("about.html", user=current_user)
+    return render_template("about.html", user=current_user, type="static")
 
 @views.route("/blog")
 def blog():
     posts = Post.query.all()
-    return render_template("blog.html", user=current_user, posts=posts)
+    return render_template("blog.html", user=current_user, posts=posts, type="dynamic")
 
 @views.route("/projects")
 def projects():
-    return render_template("project.html", user=current_user)
+    return render_template("project.html", user=current_user, type="static")
 
 @views.route("/create-post", methods=["GET", "POST"])
 @login_required
@@ -40,7 +40,7 @@ def create_post():
             db.session.commit()
             flash("Post created!")
             return redirect(url_for("views.blog"))
-    return render_template("create_post.html", user=current_user)
+    return render_template("create_post.html", user=current_user, type="static")
 
 @views.route("/delete-post/<id>")
 @login_required
@@ -59,5 +59,5 @@ def delete_post(id):
 @views.route("/post/<id>")
 def view_post(id):
     post = Post.query.filter_by(id=id).first()
-    return render_template("post.html", user=current_user,post=post)
+    return render_template("post.html", user=current_user,post=post, type="static")
     

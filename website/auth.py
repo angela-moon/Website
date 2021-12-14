@@ -24,7 +24,7 @@ def login():
         else:
             flash("Incorrect password.", category="error")      
 
-    return render_template("login.html", user=current_user)
+    return render_template("login.html", user=current_user,type="static")
 
 @auth.route("/logout")
 @login_required

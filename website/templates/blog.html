@@ -15,7 +15,9 @@
   </div>
   {% endif %}
   <div class="post-card">
-    <h4 class="card-title"><a href="post/{{post.id}}">{{post.title}}</a></h4>
+    <h4 class="card-title">
+      <a href="post/{{post.id}}">{{post.title}}</a>
+    </h4>
     <div class="post-date"><p>{{post.date_created}}</p></div>
     <p class="card-body">{{post.text}}</p>
   </div>

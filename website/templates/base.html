@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>{% block title %}{% endblock %}</title>
-    <script type=text/javascript src="{{url_for('static', filename='tinymce/tinymce.min.js')}}">
+    <script type=text/javascript src="{{url_for('static', filename='tinymce/js/tinymce/tinymce.min.js')}}">
     </script>
     <script>
             tinymce.init({
@@ -22,7 +22,7 @@
       href="{{url_for('static', filename='styles.css')}}"
     />
   </head>
-  <body>
+  <body id={{type}}>
     {% if user.is_authenticated %}
     <div id="login-link"><a href="logout">Logout</a></div>
     {% else %}
@@ -53,14 +53,13 @@
     </div>
     <p id="copyright">© 2021 Angela Moon</p>
     <footer class="footer">
-      <p>i love you, thanks for being here <3</p>
+      <p>thanks for being here <3</p>
       <div class="social-links">
         <a href="https://instagram.com/angelamoooon" target="_blank">
-          <img src="{{url_for('static', filename='instagram.jpg')}}" />
-          <!--FIND TRANSPARENT FILES!!-->
+          <img src="{{url_for('static', filename='instagram.png')}}" />
         </a>
         <a href="https://github.com/angela-moon" target="_blank">
-          <img src="{{url_for('static', filename='github.jpg')}}" />
+          <img src="{{url_for('static', filename='github.png')}}" />
         </a>
       </div>
     </footer>
