@@ -1,8 +1,6 @@
 TO DO!!
 
-* footer picture make shorter (20 * 16px tall)
-* figure out TinyMCE (or a different WYSIWYG editor)
+* make text from textarea format as HTML
 * add project grid (and projects underneath) to the projects page
-* make interests drawing?
 * add actual descriptions in the about section
 * also add a contact section somewhere
