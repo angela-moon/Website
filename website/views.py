@@ -3,6 +3,7 @@ from flask.helpers import url_for
 from flask_login import current_user
 from flask_login.utils import login_required
 from .models import Post
+from datetime import datetime
 from . import db
 
 views = Blueprint("views", __name__)
@@ -18,7 +19,7 @@ def about():
 @views.route("/blog")
 def blog():
     posts = Post.query.all()
-    return render_template("blog.html", user=current_user, posts=posts, type="dynamic")
+    return render_template("blog.html", user=current_user, posts=posts, type="static")
 
 @views.route("/projects")
 def projects():
@@ -30,17 +31,44 @@ def create_post():
     if request.method == "POST":
         title = request.form.get("title")
         text = request.form.get("text")
+        subtitle = request.form.get("subtitle")
         if not title:
             flash("Title cannot be empty.")
+        elif not subtitle:
+            flash("Subtitle cannot be empty.")
         elif not text:
             flash("Post cannot be empty.")
         else:
-            post = Post(title=title, text=text)
+            post = Post(title=title, subtitle=subtitle, text=text, date_created=datetime.now())
             db.session.add(post)
             db.session.commit()
             flash("Post created!")
             return redirect(url_for("views.blog"))
     return render_template("create_post.html", user=current_user, type="static")
+
+@views.route("/edit-post/<id>", methods=["GET", "POST"])
+@login_required
+def edit_post(id):
+    post = Post.query.filter_by(id=id).first()
+    if request.method == "POST":
+        title = request.form.get("title")
+        text = request.form.get("text")
+        subtitle = request.form.get("subtitle")
+        if not title:
+            flash("Title cannot be empty.")
+        elif not subtitle:
+            flash("Subtitle cannot be empty.")
+        elif not text:
+            flash("Post cannot be empty.")
+        else:
+            post.title = title
+            post.text = text
+            post.subtitle = subtitle
+            post.date_edited = datetime.now()
+            db.session.commit()
+            flash("Post edited!")
+            return redirect(url_for("views.blog"))
+    return render_template("edit_post.html", user=current_user, type="static", post=post)
 
 @views.route("/delete-post/<id>")
 @login_required

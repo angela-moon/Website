@@ -212,12 +212,19 @@ footer p {
   margin: 0rem 0rem 1.5rem 0rem;
 }
 
+#page-heading h3,
 #page-heading h2,
 #page-heading p {
-  margin: 1rem 0rem 1rem 1rem;
+  margin: 1rem 0rem 0rem 1rem;
 }
 
 #page-heading p {
+  font-style: italic;
+}
+
+#page-heading h5 {
+  color: rgb(77, 77, 77);
+  margin: 0rem 0rem 0rem 1rem;
   font-style: italic;
 }
 
@@ -227,7 +234,7 @@ footer p {
   display: grid;
   grid-template-columns: 2.5fr 1.75fr 1.75fr 5fr;
   grid-template-rows: auto auto;
-  grid-column-gap: 2em;
+  grid-column-gap: 1.5em;
   grid-row-gap: 2em;
   align-content: end;
 }
@@ -264,32 +271,19 @@ p {
   padding: 0.5em;
 }
 
-#interests {
-  grid-column: 1 / span 3;
-  grid-row-start: 2;
-  border: 5px solid rgb(24, 24, 24);
-  border-radius: 20px;
-  padding: 1em;
-}
-
 #current-project {
-  grid-column-start: 4;
+  grid-column: 1 / span 3;
   grid-row-start: 2;
   padding: 0.5em;
 }
 
-/* creating blog posts */
-
-.input-text textarea {
-  width: 100%;
-  height: 15em;
-  padding: 1em;
-  box-sizing: border-box;
-  border-radius: 7px;
-  border-width: 2px;
-  font-family: acumin-pro, sans-serif;
-  resize: vertical;
+#contact {
+  grid-column-start: 4;
+  grid-row-start: 2;
+  padding: 0.5em 0em;
 }
+
+/* creating blog posts */
 
 .input-text input[type="text"] {
   width: 50%;
@@ -340,8 +334,14 @@ p {
 
 .card-body {
   margin: 0rem 0rem 0.5rem 0rem;
+  word-break: break-all;
 }
 
 #post-body {
   margin: 1rem 1rem 3rem 1rem;
+  word-break: break-word;
+}
+
+.card-subtitle {
+  color: rgb(95, 95, 95);
 }

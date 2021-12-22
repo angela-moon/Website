@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Create Post{% endblock %} {% block
+    content %}
+    <div id="page-heading">
+      <h2>edit blog post</h2>
+    </div>
+    <form method="post">
+      <div class="input-text"><input type="text" name="title" id="title" value="{{post.title}}"></input></div> 
+      <div class="input-text"><input style="width: 100%" type="text" name="subtitle" id="subtitle" value="{{post.subtitle}}"></input></div> 
+      <div class="input-text"><textarea name="text" id="myTextarea">{{post.text}}</textarea></div>
+      
+      <br />
+      <div class="submit-button"><button type="submit">Submit</button></div>
+    </form>
+    {% endblock %}
+    

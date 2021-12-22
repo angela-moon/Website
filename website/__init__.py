@@ -35,4 +35,3 @@ def create_app():
 def create_databse(app):
     if not path.exists("wesite/" + DB_NAME):
         db.create_all(app=app)
-        print("Created databse")

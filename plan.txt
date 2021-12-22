@@ -1,6 +1,11 @@
 TO DO!!
 
-* make text from textarea format as HTML
 * add project grid (and projects underneath) to the projects page
+    * gpa calculator??
+    * fashion design stuff
+    * find projects to put on the projects page!!!
 * add actual descriptions in the about section
-* also add a contact section somewhere
+* figure out the date edited stuff
+* page transitions??
+* link to moonboy shop??
+* change front page tag
