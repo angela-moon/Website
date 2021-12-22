@@ -24,9 +24,9 @@
   </head>
   <body id={{type}}>
     {% if user.is_authenticated %}
-    <div id="login-link"><a href="logout">Logout</a></div>
+    <div id="login-link"><a href="/logout">Logout</a></div>
     {% else %}
-    <div id="login-link"><a href="login">Esne Angela?</a></div>
+    <div id="login-link"><a href="/login">Esne Angela?</a></div>
     {% endif %}
     <div class="content">
       <nav class="nav-bar">

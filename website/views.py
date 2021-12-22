@@ -25,6 +25,18 @@ def blog():
 def projects():
     return render_template("project.html", user=current_user, type="static")
 
+@views.route("/projects/mini-programs")
+def mini_programs():
+    return render_template("projects/mini-programs.html", user=current_user, type="static")
+
+@views.route("/projects/cs-projects")
+def cs_projects():
+    return render_template("projects/cs-projects.html", user=current_user, type="static")
+
+@views.route("/projects/fashion-design")
+def fashion_design():
+    return render_template("projects/fashion-design.html", user=current_user, type="static")
+
 @views.route("/create-post", methods=["GET", "POST"])
 @login_required
 def create_post():
@@ -88,4 +100,3 @@ def delete_post(id):
 def view_post(id):
     post = Post.query.filter_by(id=id).first()
     return render_template("post.html", user=current_user,post=post, type="static")
-    

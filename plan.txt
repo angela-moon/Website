@@ -1,11 +1,5 @@
 TO DO!!
 
-* add project grid (and projects underneath) to the projects page
-    * list of microprograms?? (e.g. gpa calculator)
-    * fashion design stuff (gallery of individual project processes)
-    * find projects to put on the projects page!!!
 * add actual descriptions in the about section
-* figure out the date edited stuff
-* page transitions??
-* link to moonboy shop??
-* change front page tag
+* add actual projects in the individual project pages
+* change front page tag??
