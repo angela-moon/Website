@@ -4,11 +4,9 @@ content %}
 <div id="page-heading">
   <h3>{{post.title}}</h3>
   <h5>{{post.subtitle}}</h5>
-  <p>
-    Written on {{post.date_created.strftime('%B %d, %Y')}}
-    <!--(Last edited {{post.date_edited.strftime('%B %d, %Y')}})
-    Figure out how to to add a condition that says "if edited, show this line" because right now i can't create new posts -->
-  </p>
+  <p>Written on {{post.date_created.strftime('%B %d, %Y')}}</p>
+  <!--(Last edited {{post.date_edited.strftime('%B %d, %Y')}})
+    Figure out how to to add a condition that says "if edited, show this line" because right now i can't create new posts-->
 </div>
 <div id="post-body"><p>{{post.text|safe}}</p></div>
 {% endblock %}
