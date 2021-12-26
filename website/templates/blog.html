@@ -18,11 +18,11 @@
     <h4 class="card-title">
       <a href="post/{{post.id}}"
         >{{post.title}} —
-        <span class="card-subtitle">{{post.subtitle}}</span></a
+        <span class="card-subtitle">{{post.date_created.strftime('%B %d, %Y')}}</span></a
       >
     </h4>
     <div class="post-date">
-      <p>{{post.date_created.strftime('%B %d, %Y')}}</p>
+      <p>{{post.subtitle}}</p>
     </div>
   </div>
   <hr />

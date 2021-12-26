@@ -44,6 +44,8 @@ def create_post():
         title = request.form.get("title")
         text = request.form.get("text")
         subtitle = request.form.get("subtitle")
+        date_created = request.form.get("date_created")
+        date_created = datetime.strptime(date_created, "%Y-%m-%d")
         if not title:
             flash("Title cannot be empty.")
         elif not subtitle:
@@ -51,9 +53,14 @@ def create_post():
         elif not text:
             flash("Post cannot be empty.")
         else:
-            post = Post(title=title, subtitle=subtitle, text=text, date_created=datetime.now())
-            db.session.add(post)
-            db.session.commit()
+            if not date_created:
+                post = Post(title=title, subtitle=subtitle, text=text, date_created=datetime.now())
+                db.session.add(post)
+                db.session.commit()
+            else:
+                post = Post(title=title, subtitle=subtitle, text=text, date_created=date_created)
+                db.session.add(post)
+                db.session.commit()
             flash("Post created!")
             return redirect(url_for("views.blog"))
     return render_template("create_post.html", user=current_user, type="static")
@@ -66,6 +73,7 @@ def edit_post(id):
         title = request.form.get("title")
         text = request.form.get("text")
         subtitle = request.form.get("subtitle")
+        date_created = request.form.get("date_created")
         if not title:
             flash("Title cannot be empty.")
         elif not subtitle:
@@ -73,6 +81,9 @@ def edit_post(id):
         elif not text:
             flash("Post cannot be empty.")
         else:
+            if date_created:
+                date_created = datetime.strptime(date_created, "%Y-%m-%d")
+                post.date_created = date_created
             post.title = title
             post.text = text
             post.subtitle = subtitle

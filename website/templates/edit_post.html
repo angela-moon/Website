@@ -6,6 +6,8 @@
     <form method="post">
       <div class="input-text"><input type="text" name="title" id="title" value="{{post.title}}"></input></div> 
       <div class="input-text"><input style="width: 100%" type="text" name="subtitle" id="subtitle" value="{{post.subtitle}}"></input></div> 
+      <div class="input-text"><input type="date" name="date_created" id="date_created" value="{{post.date_created.isoformat()}}"></input></div> 
+      
       <div class="input-text"><textarea name="text" id="myTextarea">{{post.text}}</textarea></div>
       
       <br />
